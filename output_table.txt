@@ -1,55 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".\styles.css">
-    <title>MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</title>
-</head>
-<body>
-    <div class="image-section"></div>
-    <h1 id="site-title" style="margin-bottom: 100px;">MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</h1>
-
-    <nav>
-        <ul>
-            <!-- Liens du menu retirés -->
-        </ul>
-    </nav>
-
-    <section class="video-details">
-        <div class="video-thumbnail">
-            <img src=".\images\covers\cover_video_alt236_mythologics_bloodborne.webp" alt="cover vidéo alt236 mythologics #2 bloodborne l'enfant du romantisme noir">
-        </div>
-        <div class="info">
-            <p><strong>Durée:</strong> 33min12s</p>
-            <p><strong>Date de diffusion:</strong> 9 mai 2017</p>
-            <p><strong>Artiste:</strong> ALT 236</p>
-            <p><strong>Plateforme:</strong> YouTube</p>
-        </div>
-    </section>
-
-    <section class="image-table">
-        <h2>Images de la vidéo</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Image</th>
-                    <th>Timecode</th>
-                    <th>Artiste</th>
-                    <th>Description</th>
-                    <th>Source</th>
-                    <th>Catégorie</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src=".\images\sources\mythologics_2\cover.webp" class="video-thumbnail"></td>
-                    <td>covers</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
 
                 <tr>
                     <td><img src="./images/sources/mythologics_2/00_00.png" class="video-thumbnail"></td>
@@ -4750,17 +4698,3 @@
                     <td></td>
                 </tr>
                 
-
-            </thead>
-            <tbody>
-                <!-- Les lignes seront ajoutées ici par JavaScript -->
-            </tbody>
-        </table>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Wiki ALT236. Tous droits réservés.</p>
-    </footer>
-
-</body>
-</html>
