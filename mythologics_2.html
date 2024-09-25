@@ -1,85 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\styles.css">
+    <title>MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</title>
 </head>
-<link rel="stylesheet" href=".\styles.css">
-<title>MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</title>
+<body>
+    <div class="image-section"></div>
+    <h1 id="site-title" style="margin-bottom: 100px;">MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</h1>
 
-    <body>
-        <div class="image-section"></div>
-               <h1 id="site-title" style="margin-bottom: 100px;">MYTHOLOGICS 2 / BLOODBORNE : L'enfant du Romantisme Noir</h1>
-    
-       <nav>
-
+    <nav>
         <ul>
-            <!-- Commentez ou supprimez ces lignes pour enlever les liens du menu -->
-            <!-- <li><a href="#">Accueil</a></li> -->
-            <!-- <li><a href="#">À Propos</a></li> -->
-            <!-- <li><a href="#">Contact</a></li> -->
+            <!-- Liens du menu retirés -->
         </ul>
     </nav>
-    
-    
+
     <section class="video-details">
         <div class="video-thumbnail">
             <img src=".\images\covers\cover_video_alt236_mythologics_bloodborne.webp" alt="cover vidéo alt236 mythologics #2 bloodborne l'enfant du romantisme noir">
         </div>
         <div class="info">
-            <p><strong>Durée:</strong> [Durée]</p>
-            <p><strong>Date de diffusion:</strong> [Date]</p>
-            <p><strong>Artiste:</strong> [Nom de l'artiste]</p>
-            <p><strong>Plateforme:</strong> [Plateforme]</p>
+            <p><strong>Durée:</strong> 33min12s</p>
+            <p><strong>Date de diffusion:</strong> 9 mai 2017</p>
+            <p><strong>Artiste:</strong> ALT 236</p>
+            <p><strong>Plateforme:</strong> YouTube</p>
         </div>
     </section>
-    
-    <section class="transcription">
-        <h2>Transcription</h2>
-        <p>[Texte de la vidéo]</p>
-    </section>
-    
-    
-        <section class="image-table">
-            <h2>Images de la vidéo</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Timecode</th>
-                        <th>Artiste</th>
-                        <th>Description</th>
-                        <th>Source</th>
-                        <th>Catégorie</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>[Timecode]</td>
-                        <td>[Artiste]</td>
-                        <td>[Description]</td>
-                        <td>[Source]</td>
-                        <td>[Catégorie]</td>
-                    </tr>
-                    <tr>
-                        <td>[Timecode]</td>
-                        <td>[Artiste]</td>
-                        <td>[Description]</td>
-                        <td>[Source]</td>
-                        <td>[Catégorie]</td>
-                    </tr>
-                    <!-- Ajoutez d'autres lignes en fonction de vos besoins -->
-                </tbody>
-            </table>
-        </section>
-    
-    
-        <footer>
-            <p>&copy; 2024 Wiki ALT236. Tous droits réservés.</p>
-        </footer>
-    </body>
-    </html>
 
-    
+    <section class="image-table">
+        <h2>Images de la vidéo</h2>
+        <table id="image-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Timecode</th>
+                    <th>Artiste</th>
+                    <th>Description</th>
+                    <th>Source</th>
+                    <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront ajoutées ici par JavaScript -->
+            </tbody>
+        </table>
+    </section>
 
     <footer>
-        <p>Votre pied de page ici</p>
+        <p>&copy; 2024 Wiki ALT236. Tous droits réservés.</p>
     </footer>
 
+    <script>
+        // Fonction pour charger la liste des images depuis le fichier PHP
+        async function loadImages() {
+            const response = await fetch('list_images.php');
+            const images = await response.json();
+
+            const tableBody = document.querySelector('#image-table tbody');
+
+            // Pour chaque image, créer une ligne avec les données
+            images.forEach((image, index) => {
+                const row = document.createElement('tr');
+                
+                // Colonne pour l'image
+                const imgCell = document.createElement('td');
+                const imgElement = document.createElement('img');
+                imgElement.src = image.path;
+                imgElement.alt = image.name;
+                imgElement.classList.add('video-thumbnail');
+                imgCell.appendChild(imgElement);
+                row.appendChild(imgCell);
+                
+                // Autres colonnes vides pour l'instant (timecode, artiste, etc.)
+                for (let i = 1; i < 6; i++) {
+                    const cell = document.createElement('td');
+                    row.appendChild(cell);
+                }
+                
+                // Ajouter la ligne au tableau
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Charger les images au chargement de la page
+        window.onload = loadImages;
+    </script>
 </body>
 </html>
-
