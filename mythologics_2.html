@@ -54,7 +54,7 @@
     <script>
         // Fonction pour charger la liste des images depuis le fichier PHP
         async function loadImages() {
-            const response = await fetch('list_images.php');
+            const response = await fetch('list_images_mythologics_2.php');
             const images = await response.json();
 
             const tableBody = document.querySelector('#image-table tbody');
