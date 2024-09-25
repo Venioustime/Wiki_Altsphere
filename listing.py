@@ -34,7 +34,7 @@ def generate_image_list_txt(directory_path, output_file):
                 f.write(line + "\n")
 
 # Exemple d'utilisation
-directory = './images/sources/mythologics_3'  # Chemin vers le dossier d'images
+directory = './images/sources/stendhal_syndrome_2'  # Chemin vers le dossier d'images
 output_file = 'output_table.txt'  # Fichier texte de sortie
 
 # Appeler la fonction pour générer le fichier texte
