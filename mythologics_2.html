@@ -30,7 +30,7 @@
 
     <section class="image-table">
         <h2>Images de la vidéo</h2>
-        <table id="image-table">
+        <table>
             <thead>
                 <tr>
                     <th>Image</th>
@@ -39,6 +39,24 @@
                     <th>Description</th>
                     <th>Source</th>
                     <th>Catégorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src=".\images\sources\mythologics_1\cover.webp" class="video-thumbnail"></td>
+                    <td>covers</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img src=".\images\sources\mythologics_1\00_01.png" class="video-thumbnail"></td>
+                    <td>00min01s</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </thead>
             <tbody>
@@ -51,40 +69,5 @@
         <p>&copy; 2024 Wiki ALT236. Tous droits réservés.</p>
     </footer>
 
-    <script>
-        // Fonction pour charger la liste des images depuis le fichier PHP
-        async function loadImages() {
-            const response = await fetch('list_images_mythologics_2.php');
-            const images = await response.json();
-
-            const tableBody = document.querySelector('#image-table tbody');
-
-            // Pour chaque image, créer une ligne avec les données
-            images.forEach((image, index) => {
-                const row = document.createElement('tr');
-                
-                // Colonne pour l'image
-                const imgCell = document.createElement('td');
-                const imgElement = document.createElement('img');
-                imgElement.src = image.path;
-                imgElement.alt = image.name;
-                imgElement.classList.add('video-thumbnail');
-                imgCell.appendChild(imgElement);
-                row.appendChild(imgCell);
-                
-                // Autres colonnes vides pour l'instant (timecode, artiste, etc.)
-                for (let i = 1; i < 6; i++) {
-                    const cell = document.createElement('td');
-                    row.appendChild(cell);
-                }
-                
-                // Ajouter la ligne au tableau
-                tableBody.appendChild(row);
-            });
-        }
-
-        // Charger les images au chargement de la page
-        window.onload = loadImages;
-    </script>
 </body>
 </html>
